@@ -13,7 +13,7 @@ function getData(){
     else
     {
         let LOCATION = document.getElementById('city').value+",IN";
-        let url_realtime = "http://api.openweathermap.org/data/2.5/weather?q=" + LOCATION + "&appid=" + API_KEY + "&units=metric";
+        let url_realtime = "https://api.openweathermap.org/data/2.5/weather?q=" + LOCATION + "&appid=" + API_KEY + "&units=metric";
         fetch(url_realtime)
             .then((response) => {
                 return response.json();
@@ -35,7 +35,7 @@ function getData(){
                 document.getElementById('windS').innerHTML = `${data["wind"]["speed"]}m/s`;
                 document.getElementById('windD').innerHTML = `${data["wind"]["deg"]}&deg;`;
                 document.getElementById('pressure').innerHTML = `${data["main"]["pressure"]}mm`;
-            let url_pollution = "http://api.openweathermap.org/data/2.5/air_pollution?lat=" + lat + "&lon=" + lon + "&appid=" + API_KEY;
+            let url_pollution = "https://api.openweathermap.org/data/2.5/air_pollution?lat=" + lat + "&lon=" + lon + "&appid=" + API_KEY;
             fetch(url_pollution)
                 .then((response) => {
                     return response.json();
@@ -78,7 +78,7 @@ function getData(){
             let time_labels = []
             let temp_data = []
             let desc_labels = []
-            let url_forecast = "http://api.openweathermap.org/data/2.5/forecast?q=" + LOCATION + "&appid=" + API_KEY + "&units=metric";
+            let url_forecast = "https://api.openweathermap.org/data/2.5/forecast?q=" + LOCATION + "&appid=" + API_KEY + "&units=metric";
             fetch(url_forecast)
                 .then((response) => {
                     return response.json();
